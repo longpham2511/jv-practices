@@ -1,2 +1,5 @@
-package JAVA_OOP;public class Abstract {
+package JAVA_OOP;
+
+abstract public class Abstract {
+    public abstract void sound();
 }
