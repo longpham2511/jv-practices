@@ -1,6 +1,6 @@
 package JAVA_OOP;
 
-public class Abstract_Main {
+public class OOP_MAIN {
     public static void main(String[] args) {
 
         //Abstraction
@@ -27,5 +27,15 @@ public class Abstract_Main {
         student2.SetName("KN");
         student2.Setbirthdate(27);
         System.out.println("Updated student list:\n"+" - " + student1.GetName()+" age: "+student1.Getbirthdate()+"\n"+" - "+student2.GetName()+" age: "+student2.Getbirthdate());
+        System.out.println();
+
+        //Polymorphism
+        System.out.println("Polymorphism");
+        Poly_parents weirdo0 = new Poly_parents();
+        Poly_child1 weirdo1 = new Poly_child1();
+        Poly_child2 weirdo2 = new Poly_child2();
+        weirdo0.get_action();
+        weirdo1.get_action();
+        weirdo2.get_action();
     }
 }
