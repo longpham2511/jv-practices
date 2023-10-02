@@ -1,9 +1,13 @@
+import jv_stream.Gender;
+
 public class Person {
     private String name;
     private int age;
-    public Person(String name, int age){
+    private final gender sex;
+   Person(String name, int age,gender sex){
         this.name=name;
         this.age = age;
+        this.sex=sex ;
     }
 
 
@@ -23,7 +27,8 @@ public class Person {
     }
 
     void aging(){
-        System.out.println(this.name +" turns "+this.age+" today.");
+        Integer aging = this.age++;
+        System.out.println(this.name +" turns "+age+" today.");
     }
 
 }
