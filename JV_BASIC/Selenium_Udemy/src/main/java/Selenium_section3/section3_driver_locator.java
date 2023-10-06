@@ -37,7 +37,7 @@ public class section3_driver_locator {
         //-> Tagname[attribute='value'] -> input[placeholder='Username']
         //<input type="text" placeholder="Email" data-keeper-lock-id="k-d10x1mmxjv" style="" xpath="2">
         // input[type='text']:nth-child(2)
-        //
+        // tagname (if there's only 1 unique tagname)
         // <parent tagname> <child tagname>
 
         //can also do this in console with the format $('<CSS Selector>') -> $('input.Username')
@@ -61,7 +61,7 @@ public class section3_driver_locator {
         //  //Tagname[@attribute='value'][index]
         // <input type="text" placeholder="Email" data-keeper-lock-id="k-d10x1mmxjv" style="" xpath="2">
         // parent to child tag -> //<parent tag>/<child tag>[<index>]
-        //
+        // //tagname (if there's only 1 unique tagname)
 
         //Check on console: for CSS use $(<expression>) for xpath $('<expression>')
         section3.findElement(By.xpath("//input[@placeholder='Name']")).sendKeys("Long Pham");
