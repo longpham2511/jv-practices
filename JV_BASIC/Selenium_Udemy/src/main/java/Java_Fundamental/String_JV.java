@@ -18,6 +18,10 @@ public class String_JV {
             System.out.println(S2.charAt(s));
         }
 
+        String pwMsg = "Your password is: 25111997";
+        String[] pw = pwMsg.split(" ");
+        System.out.println(pw[3]);
+
 
     }
 }
