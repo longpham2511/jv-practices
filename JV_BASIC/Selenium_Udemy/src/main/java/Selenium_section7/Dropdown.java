@@ -48,6 +48,10 @@ public class Dropdown {
         section7.findElement(By.id("ctl00_mainContent_ddl_originStation1_CTXT")).click();
         section7.findElement(By.xpath("//a[@value='IXG']")).click();
         Thread.sleep(1000);
-        section7.findElement(By.xpath("(//a[@value='AMD'])[2]")).click();
+        section7.findElement(By.xpath("//div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR']//a[@value='AMD']")).click();
+
+        //section7.findElement(By.xpath("(//a[@value='AMD'])[2]")).click();
+        //or being a dynamic dropdown, you can pinpoint the table in which contains the element
+        // parent and child relationship XPATH -> //div[@id='glsctl00_mainContent_ddl_destinationStation1_CTNR']//a[@value='AMD']
     }
 }
