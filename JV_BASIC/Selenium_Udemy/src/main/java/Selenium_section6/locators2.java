@@ -26,7 +26,7 @@ public class locators2 {
         Assert.assertEquals(section6.findElement(By.xpath("//div[@class='login-container']/h1")).getText(),"Welcome to Rahul Shetty Academy");
         Assert.assertEquals(section6.findElement(By.tagName("p")).getText(),"You are successfully logged in.");
         section6.findElement(By.xpath("//button[text()='Log Out']")).click();
-        //catching "text" web element using xpath //tagname[text()='<text>'] or //*[text()='<text>']
+        //catching "text" web element using xpath //tagname[text()='<text>'] or //*[text()='<text>'] ------> text elements
         section6.close();
     }
 }
