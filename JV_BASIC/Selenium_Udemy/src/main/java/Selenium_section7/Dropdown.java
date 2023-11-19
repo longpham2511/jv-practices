@@ -26,6 +26,8 @@ public class Dropdown {
         alert java popups
         selenium webdriver form methods
          */
+        System.setProperty("chromedriver.exe", "L:/Study/chromedriver_win32");
+
         WebDriver section7 = new ChromeDriver();
         section7.manage().window().maximize();
         section7.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
@@ -34,7 +36,7 @@ public class Dropdown {
         Dropdown test = new Dropdown();
         //test.static_dropdown(section7);
         test.handling_checkbox(section7);
-        //section7.close();
+        section7.close();
 
     }
     public void static_dropdown(WebDriver section7){
@@ -72,12 +74,31 @@ public class Dropdown {
 
     public void handling_checkbox(WebDriver section7) throws InterruptedException {
         section7.get("https://www.spicejet.com/");
-        Thread.sleep(2000);
-        section7.findElement(By.xpath("//div[text()='Family & Friends']")).click();
+        Thread.sleep(5000);
+        System.out.println(section7.findElements(By.xpath("//div[@class='css-76zvg2 r-cqee49 r-1enofrn r-1ozqkpa']")).size());
+        System.out.println(section7.findElement(By.xpath("//div[@class='css-76zvg2 r-cqee49 r-1enofrn r-1ozqkpa'][contains(text(),'Family & Friends')]")).isEnabled()); //check if the element is present
+        section7.findElement(By.xpath("//div[@class='css-76zvg2 r-cqee49 r-1enofrn r-1ozqkpa'][contains(text(),'Family & Friends')]")).click();
+        WebElement chkbox = section7.findElement(By.xpath("//div[@class='css-76zvg2 r-cqee49 r-1enofrn r-1ozqkpa'][contains(text(),'Family & Friends')]"));
+        if (!chkbox.isEnabled()){
+            System.out.println("The box is not checked.");
+        }
+        else{
+            System.out.println("The box is checked.");
+        }
+        System.out.println(section7.findElement(By.xpath("//div[@class='css-76zvg2 r-cqee49 r-1enofrn r-1ozqkpa'][contains(text(),'Family & Friends')]")).isEnabled()); //check if the element is present
+
         section7.findElement(By.xpath("//div[text()='Senior Citizen']")).click();
         section7.findElement(By.xpath("//div[text()='Unaccompanied Minor']")).click();
         section7.findElement(By.xpath("//div[@class='css-1dbjc4n']/div[text()='Govt. Employee']")).click();
-
-
+        System.out.println("\n\tBefore adding passengers: " + section7.findElement(By.xpath("//div[@data-testid='home-page-travellers']")).getText());
+        section7.findElement(By.xpath("//div[@data-testid='home-page-travellers']")).click();
+        Thread.sleep(1000);
+        int clicking_time = 0;
+        while (clicking_time <4){
+            section7.findElement(By.xpath("//div[@data-testid='Adult-testID-plus-one-cta']")).click();
+            clicking_time++;
+        }
+        System.out.println("\n\tAfter adding passengers: " + section7.findElement(By.xpath("//div[@data-testid='home-page-travellers']")).getText());
+        section7.findElement(By.xpath("//div[@data-testid='home-page-travellers-done-cta']")).click();
     }
 }
