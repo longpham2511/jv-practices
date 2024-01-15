@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,7 +39,7 @@ public class Ecommerce_Practice {
         //make a list out of available items on the ecommerce page
         List<WebElement> items = section8.findElements(By.xpath("//h4[@class='product-name']"));
 
-        // add a counter to know how many times it pick a item from the list
+        // add a counter to know how many times it picks an item from the list
         int a = 0;
         for(int i = 0; i < items.size(); i++){
             String[] productlist = items.get(i).getText().split("-");
