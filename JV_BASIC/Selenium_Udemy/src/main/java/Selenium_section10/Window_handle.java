@@ -17,6 +17,14 @@ public class Window_handle {
         section10.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         section10.findElement(By.cssSelector(".blinkingText")).click();
         Set<String> windows = section10.getWindowHandles(); // for window => [parentID,childID]
+
+        /*
+        Another way to handle window
+        for (String winSwitch : section10.getWindowHandles(){
+        section10.switchto().window(winHandle);
+        }
+         */
+
         Iterator<String> movewindow = windows.iterator(); //movewindow can move between windows
         String parentID = movewindow.next(); // move to the 1st window
         String childID = movewindow.next(); // move to the 2nd window

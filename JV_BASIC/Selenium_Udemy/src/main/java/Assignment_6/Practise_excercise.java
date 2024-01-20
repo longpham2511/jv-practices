@@ -1,4 +1,4 @@
-package Assugnment_6;
+package Assignment_6;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
