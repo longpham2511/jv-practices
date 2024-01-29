@@ -1,5 +1,9 @@
 package Java_Fundamental;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class Array_Jv {
     public static void main(String[] args) {
 
@@ -27,5 +31,11 @@ public class Array_Jv {
         for (String n : games){
             System.out.println(n);
         }
+
+        List listofGames = Arrays.asList(games);
+
+        ArrayList arraylistofGames = new ArrayList(List.of(games));
+
+
     }
 }

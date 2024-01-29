@@ -18,15 +18,15 @@ public class OOP_MAIN {
 
         //Encapsulation
         System.out.println("Encapsulation");
-        Encapsulation student1 = new Encapsulation("Long Pham",25);
-        Encapsulation student2 = new Encapsulation("Mai Khanh",25);
-        System.out.println("Student list:\n"+" - " + student1.GetName()+" age: "+student1.Getbirthdate());
-        System.out.println(" - " + student2.GetName()+" age: "+student2.Getbirthdate());
+        Encapsulation student1 = new Encapsulation("Long Pham", 25);
+        Encapsulation student2 = new Encapsulation("Mai Khanh", 25);
+        System.out.println("Student list:\n" + " - " + student1.GetName() + " age: " + student1.Getbirthdate());
+        System.out.println(" - " + student2.GetName() + " age: " + student2.Getbirthdate());
         student1.SetName("LP");
         student1.Setbirthdate(27);
         student2.SetName("KN");
         student2.Setbirthdate(27);
-        System.out.println("Updated student list:\n"+" - " + student1.GetName()+" age: "+student1.Getbirthdate()+"\n"+" - "+student2.GetName()+" age: "+student2.Getbirthdate());
+        System.out.println("Updated student list:\n" + " - " + student1.GetName() + " age: " + student1.Getbirthdate() + "\n" + " - " + student2.GetName() + " age: " + student2.Getbirthdate());
         System.out.println();
 
         //Polymorphism

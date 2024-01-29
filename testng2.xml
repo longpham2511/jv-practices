@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo Test Suite ">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/longp/IdeaProjects/jv-practices/JV_BASIC/Selenium_Udemy/src/main/java/Selenium_Framework_TestNG/testNG_Framework1.java">
+        <packages>
+            <package name="Selenium_Framework_TestNG"></package> <!-- Running a package -->
+            
+        </packages>
+    </test>
+</suite>

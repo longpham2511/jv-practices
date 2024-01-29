@@ -24,13 +24,13 @@ public class main_people {
         //-----------Declarative approach----------------
 
         //Filter - Finding female in the list
-        List <Person> females = people.stream() // " -> " means predicate which returns true or false
+        List<Person> females = people.stream() // " -> " means predicate which returns true or false
                 .filter(person -> person.getgender().equals(Gender.FEMALE))
                 .collect(Collectors.toList());
         //females.forEach(System.out::println);
 
         //Sort - sorting age
-        List <Person> agesorted = people.stream()
+        List<Person> agesorted = people.stream()
                 .sorted(Comparator.comparing(Person::getage).thenComparing(Person::getgender).reversed())
                 .collect(Collectors.toList());
         //agesorted.forEach(System.out::println);
@@ -46,14 +46,14 @@ public class main_people {
         //None match
         boolean nonematching = people.stream()
                 .noneMatch(person -> person.getname().equals("Long"));
-       // System.out.println(nonematching);
+        // System.out.println(nonematching);
 
         //Max
         people.stream().max(Comparator.comparing(person -> person.getage()));
-            //    .ifPresent(System.out::println);
+        //    .ifPresent(System.out::println);
         //Min
         people.stream().min(Comparator.comparing(person -> person.getage()));
-             //   .ifPresent(System.out::println);
+        //   .ifPresent(System.out::println);
 
         //Group
         Map<Gender, List<Person>> groupbyGender = people.stream().collect(Collectors.groupingBy(Person::getgender));
@@ -70,7 +70,7 @@ public class main_people {
                 new Person("James", 30, Gender.MALE),
                 new Person("Katherine", 31, Gender.FEMALE),
                 new Person("Michelle", 1, Gender.FEMALE),
-                new Person("Paul", 2,Gender.MALE)
+                new Person("Paul", 2, Gender.MALE)
         );
     }
 }

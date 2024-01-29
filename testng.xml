@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo Test Suite ">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/longp/IdeaProjects/jv-practices/JV_BASIC/Selenium_Udemy/src/main/java/Selenium_Framework_TestNG/testNG_Framework1.java">
+        <classes>
+            <class name="Selenium_Framework_TestNG.testNG_Framework1">
+
+                <methods>
+                    <include name="demo1"/>
+                    <include name="demo2"/>
+                </methods>
+            </class>
+
+            <class name="Selenium_Framework_TestNG.testNG_extra">  <!-- Adding a class into .xml file to run all test cases -->
+                <methods>
+                    <include name="demo_extra1"/>
+                    <exclude name="demo_extra"></exclude>
+                    <exclude name="demo.*"></exclude> <!-- "demo.*" means everything after the word demo -->
+
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

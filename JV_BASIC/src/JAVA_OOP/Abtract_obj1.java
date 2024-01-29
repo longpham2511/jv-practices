@@ -1,8 +1,8 @@
 package JAVA_OOP;
 
-class Abtract_obj1 extends Abstract{
+class Abtract_obj1 extends Abstract {
     @Override
-  public void sound(){
+    public void sound() {
         System.out.println("Roar");
     }
 }

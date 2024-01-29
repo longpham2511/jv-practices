@@ -1,6 +1,5 @@
 package Selenium_section13;
 
-import graphql.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

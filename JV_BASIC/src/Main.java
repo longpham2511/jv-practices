@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 //        System.out.println("Hello world!");
@@ -43,19 +44,19 @@ public class Main {
 //            System.out.println(num1 +" x "+ i + " = "+(num1*i));
 //        }
 
-        int[] array1={10,20,9,8,4,23};
-        int[] array2={30,40,60,70,20,80};
-        System.out.println("The Array contains: "+ Arrays.toString(array1));
+        int[] array1 = {10, 20, 9, 8, 4, 23};
+        int[] array2 = {30, 40, 60, 70, 20, 80};
+        System.out.println("The Array contains: " + Arrays.toString(array1));
         Arrays.sort(array1);
         System.out.println("The sorted Array would be: " + Arrays.toString(array1));
         HashSet<Integer> HS = new HashSet<Integer>();
-        for(int i=0;i <array1.length;i++){
-            for(int j = 0; j <array2.length;j++){
-                if(array1[i] == array2[j]){
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array2.length; j++) {
+                if (array1[i] == array2[j]) {
                     HS.add(array1[i]);
                 }
             }
         }
-        System.out.println("Common number will be: "+HS);
+        System.out.println("Common number will be: " + HS);
     }
 }

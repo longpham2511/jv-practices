@@ -1,20 +1,22 @@
 import jv_stream.Gender;
 
 public class Person {
+    private final gender sex;
     private String name;
     private int age;
-    private final gender sex;
-   Person(String name, int age,gender sex){
-        this.name=name;
+
+    Person(String name, int age, gender sex) {
+        this.name = name;
         this.age = age;
-        this.sex=sex ;
+        this.sex = sex;
     }
 
 
-    public String getName(){
+    public String getName() {
         return name;
     }
-    public Integer getAge(){
+
+    public Integer getAge() {
         return age;
     }
 
@@ -22,13 +24,13 @@ public class Person {
         age = newage;
     }
 
-    void sleep(){
+    void sleep() {
         System.out.println(this.name + " is sleepy as fuck.");
     }
 
-    void aging(){
+    void aging() {
         Integer aging = this.age++;
-        System.out.println(this.name +" turns "+age+" today.");
+        System.out.println(this.name + " turns " + age + " today.");
     }
 
 }
