@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo Test Suite ">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/longp/IdeaProjects/jv-practices/JV_BASIC/Selenium_Udemy/src/main/java/Selenium_Framework_TestNG/testNG_Framework1.java">
+        <groups>
+            <run>
+                <exclude name="grouptest"/> <!--If you use exclude the tagged group, all test cases will be run. do it vice versa and it will run excusively the tagged group -->
+            </run>
+
+        </groups>
+        <classes>
+            <class name="Selenium_Framework_TestNG.testNG_Framework1"/>
+            <class name="Selenium_Framework_TestNG.testNG_extra"/>  <!-- Adding a class into .xml file to run all test cases -->
+        </classes>
+    </test>
+
+
+</suite>
