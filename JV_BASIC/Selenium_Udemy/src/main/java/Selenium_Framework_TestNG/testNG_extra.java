@@ -1,9 +1,7 @@
 package Selenium_Framework_TestNG;
 
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.Assert;
+import org.testng.annotations.*;
 
 public class testNG_extra {
     @BeforeSuite //used this annotation to declare something globally - i.e. declare url
@@ -45,7 +43,8 @@ public class testNG_extra {
     public void tc_independ() {
         System.out.println("independ test case");
     }
-    @Test(dependsOnMethods = {"tc_independ","tc_depend"})
+
+    @Test(dependsOnMethods = {"tc_independ", "tc_depend1"})
     public void tc_depend2() {
         System.out.println("The 2nd depend test case will run after the depend and independ1 tc");
     }
@@ -55,10 +54,62 @@ public class testNG_extra {
         System.out.println("you can skip this test case due to known issues");
     }
 
-    @Test(timeOut = 5000) //if that test case takes a long time to finish, leave the timeout so it will wait and not throw any errors
+    @Test(timeOut = 5000)
+    //if that test case takes a long time to finish, leave the timeout so it will wait and not throw any errors
     public void time_out() {
         System.out.println("time_out");
     }
+
+    @Parameters({"URL"})
+    @Test
+    //By putting the parameter in the xml file, you can use for any test cases, String urlname will utilize the string from the parameter
+    public void parameter_usage(String urlname) {
+        System.out.println("By putting the parameter in the xml file, you can use for any test cases " + urlname);
+    }
+    @Parameters({"URL","APIKey"})
+    @Test
+    //By putting the parameter in the xml file, you can use for any test cases, String urlname will utilize the string from the parameter
+    public void parameter_usage1(String urlname, String apiKeys) {
+        System.out.println("Local overidden parameter" + urlname);
+        System.out.println("This is the APIKEY: "+apiKeys);
+    }
+
+    @DataProvider
+    @Test
+    public Object[][] Getdata(){
+        /*
+        Data scenario:
+        TC1: username + password - good credit data = row
+        TC2: username + password - no credit data
+        TC3: fraud reported data
+
+        This is a multi array concept
+         */
+        Object[][] data = new Object[3][2];  //3 times using these 2 variables (username + pass)
+        //1st set
+        data[0][0] = "firstusername";   //row 1 column 1
+        data[0][1] = "firstpass";       //row 1 column 2
+        //2nd set
+        data[1][0] = "2nd_username";    //row 2 column 1
+        data[1][1] = "2nd_pass";        //row 2 column 2
+        //3rd set
+        data[2][0] = "3rd_username";
+        data[2][1] = "3rd_username";
+        return data;
+    }
+
+    @Test (dataProvider = "Getdata")
+    public void receivedata(String username, String password){
+        System.out.println(username);
+        System.out.println(password);
+
+    }
+
+    @Test
+    public void failTC(){
+        Assert.assertTrue(false);
+    }
+
 
 }
 

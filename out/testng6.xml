@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo Test Suite " parallel="tests" thread-count="2"> <!-- Run test cases in parallel -->
+    <listeners>
+        <listener class-name= "Selenium_Framework_TestNG.testNG_listeners" />
+    </listeners>
+    <parameter name="URL" value="ign.com"></parameter> <!--Setting parameter globally -->
+
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/longp/IdeaProjects/jv-practices/JV_BASIC/Selenium_Udemy/src/main/java/Selenium_Framework_TestNG/testNG_Framework1.java"
+          parallel="classes" thread-count="2">
+        <classes>
+            <class name="Selenium_Framework_TestNG.testNG_Framework1"/>
+            <class name="Selenium_Framework_TestNG.testNG_extra">
+                <parameter name="URL" value="gamespot.com"></parameter> <!--Setting parameter internally for a test case, overiding the URL's value -->
+                <parameter name="APIKey" value="THISISANAPIKEY123456789"></parameter>
+            </class>
+        </classes>
+    </test>
+</suite>

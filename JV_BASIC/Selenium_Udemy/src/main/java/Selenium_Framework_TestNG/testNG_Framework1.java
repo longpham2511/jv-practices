@@ -25,6 +25,7 @@ public class testNG_Framework1 {
              - enabled = false/ true - to disable a test case and run the test suite
              - @test(group={"hehe"}) - give tc tags to run them separately
              - @test(dependsonMethod={"method1"}} - this dependent method will be executed after the mentioned tc
+             - 2 ways to parameterlize: drive data from xml testng file or using @dataprovider annotation
      */
     @Test
     public void demo1(){
